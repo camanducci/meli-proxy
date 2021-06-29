@@ -1,6 +1,8 @@
 class RequestDetailsController < ApplicationController
   def index
-    #Usar o formato YYYY-MM-DD para buscar os dados das requests por data
+    #Use the format YYYY-MM-DD to fetch request data from database
+    #URL: /api/request_details_by_date/:from/:to
+    
     response = {}
     from_date = params[:from].split("-")
     to_date = params[:to].split("-")
@@ -12,6 +14,8 @@ class RequestDetailsController < ApplicationController
     render json: response
   end
 
+  #Use the IP fetch request data from database
+  #URL: /api/request_details_by_ip/:request_ip
   def index_by_ip
     requests = RequestDetail.where(ip_address: params[:request_ip])
     render json: requests

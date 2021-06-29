@@ -10,9 +10,8 @@ class MeliProxyController < ApplicationController
     RequestDetail.create(
       ip_address: request.remote_ip,
       path: request.env['PATH_INFO'],
-      valid_request: true,
-      redirected_url: redirect_url,
-      throttle_type: nil)
+      redirected_url: redirect_url
+    )
     redirect_to redirect_url
   end
 end

@@ -19,9 +19,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_001339) do
   create_table "request_details", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "ip_address"
     t.string "path"
-    t.boolean "valid_request"
     t.string "redirected_url"
-    t.string "throttle_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
