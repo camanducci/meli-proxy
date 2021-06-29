@@ -6,7 +6,8 @@ It will append any paths and query params to it\
 )
 
 It also provides a throttle mechanism to controll the number of requests made by an IP\
-and for a Path.\ It can me tuned on `/config/initializers/rack_attack.rb`
+and for a Path. It can me tuned on the functions `throttle` found in `/config/initializers/rack_attack.rb`, 
+change the params limit(int) and period(seconds).
 
 If you need more info, check it out: [rack attack gem](https://github.com/rack/rack-attack)
 
